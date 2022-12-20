@@ -1,0 +1,28 @@
+<section id="show-page">
+    <h1>Details</h1>
+    <div>Airline: <%= flight.airline %></div>
+    <div>Flight Number: <%= flight.flightNo %></div>
+    <div>Airport: <%= flight.airport %></div>
+    <div>Departs: <%= flight.departs %></div>
+    <div>Now Flying: <%= flight.nowFlying ? 'Yes' : 'No' %></div>
+    
+  </section>
+  <!-- add to cast form below this comment -->
+  
+  <br><br>
+  <h2>Destinations</h2>
+  <form method="POST" action="/flights/<%= flight._id %>/destinations">
+    <label>Arrival:</label>
+    <input type="datetime-local" name="arrivals"> 
+    <label>Airport:</label>
+    <select name="airport">
+      <option value="DEN">DEN</option>
+      <option value="AUS">AUS</option>
+      <option value="DFW">DFW</option>
+      <option value="LAX">LAX</option>
+      <option value="SAN">SAN</option>
+    </select>
+    <input type="submit" value="Add Destination">
+  </form>
+
+  <a href="/flights">All Flights</a>
